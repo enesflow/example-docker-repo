@@ -1,7 +1,10 @@
 const app = require("express")();
 
+let visits = 0;
+
 app.get("/", (req, res) => {
-	res.send("Hello World 2!");
+	visits++;
+	res.send(`This page has been visited ${visits} times`);
 });
 
 app.listen(3000, () => {
