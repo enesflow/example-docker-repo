@@ -4,6 +4,7 @@ let visits = 0;
 
 app.get("/", (req, res) => {
 	visits++;
+	console.log(`Sending: This page has been visited ${visits} times`);
 	res.send(`This page has been visited ${visits} times`);
 });
 
