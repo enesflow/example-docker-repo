@@ -25,6 +25,11 @@ app.get("/cpu2/:duration", (req, res) => {
   res.send('CPU-intensive process completed.');
 });
 
+app.get("/test", (req, res) => {
+  const testValue = process.env.TEST;
+  res.send(`The value of TEST environment variable is: ${testValue}`);
+});
+
 function performCpuIntensiveTask(durationInSeconds) {
   const endTime = Date.now() + durationInSeconds * 1000;
 
